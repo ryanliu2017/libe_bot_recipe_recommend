@@ -1,0 +1,65 @@
+{
+  "type": "bubble",
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "first",
+          "text": "first",
+          "data": "frequentset="
+        },
+        "color": "#E0DFD2EF",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "second",
+          "text": "second",
+          "data": "frequentset="
+        },
+        "color": "#E0DFD29E",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "third",
+          "text": "third",
+          "data": "frequentset="
+        },
+        "color": "#E0DFD2EF",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "fourth",
+          "text": "fourth",
+          "data": "frequentset="
+        },
+        "color": "#E0DFD29E",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "fifth",
+          "text": "fifth",
+          "data": "frequentset="
+        },
+        "color": "#E0DFD2EF",
+        "style": "secondary"
+      }
+    ]
+  }
+}

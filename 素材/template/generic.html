@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<title>Elements - Industrious by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">食在，想不到</a>
+				<nav>
+					<a href="#menu">我的菜單 Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">我的食譜 MY RECIPE</a></li>
+					<li><a href="elements.html">我的冰箱 MY RECIPE</a></li>
+					<li><a href="generic.html">註冊 REGISTER</a></li>
+					<li><a href="feedback.html">回饋調查 FEEDBACK</a></li>
+				</ul>
+			</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>我的冰箱 MY FRIDGE</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+
+								<h1><font color="##339900">"食在，想不到" 問卷調查</font></h1>
+								<form action="/survey" method='post'>
+									<input name="user_ID" type="hidden" value="{{ ID }}"> <!-- 單行文字方塊 -->
+									<label>帳&nbsp;&nbsp;&nbsp;號<font color="#FF9900">Account</font>：<input name="Account" placeholder="您的帳號" required="" size="40" style="font-size:16px;padding:10px" type="textbox"></label><br>
+									<br>
+									<label>密&nbsp;&nbsp;&nbsp;碼<font color="#FF9900">Password</font>：<input name="Password" placeholder="您的密碼" required="" size="40" style="font-size:16px;padding:10px" type="password"></label><br>
+									<br>
+									<label>1. 姓&nbsp;&nbsp;&nbsp;名 <font color="#FF9900">Name</font>：<input name="UserName" placeholder="Ex:黃小貞" required="" size="40" style="font-size:16px;padding:10px" type="textbox"></label><br>
+									<br>
+									<label>2. E-Mail：<input name="UserMail" placeholder="Username@mailserver" required="" size="40" style="font-size:16px;padding:10px" type="email"></label><br>
+									<br>
+									<!-- 下拉式選單 -->
+									<label>3. 性別 <font color="#FF9900">Gander</font>: <select name="gender" style="font-size:16px;padding:10px"></label>
+										<option value='0'>
+											女 Female
+										</option>
+										<option value='1'>
+											男 Male
+										</option>
+										<option value='2'>
+											不予提供 Not Provided
+										</option>
+									</select><br>
+									<br>
+									<label>4. 電話號碼 <font color="#FF9900">Phone no.</font>: <input name="Phone" placeholder="etc.09XXXXXXXX" required="" size="40" style="font-size:16px;padding:10px" type="textbox"></label><br>
+									<br>
+									<!-- 選擇鈕 -->
+									<label>5. 年&nbsp;&nbsp;&nbsp;齡 <font color="#FF9900">Age</font>: <input name="age" type="date" required=""></label>
+									<br>
+									<h2><font color="#FF00CC">客製化料理的喜好 Custometic Preference</font></h2>
+									<table>
+										<tr class="a3">
+									<label>6. 對於料理的口味喜歡...(可複選) <font color="#FF9900">What flavor do you prefer? (Multiple choice)</font></label><br>
+										<input type="checkbox" id="checkbox-beta" name="taste" value="sweet">
+										<label for="checkbox-beta">甜味<font color="#FF9900">Sweet</font></label>
+										<input type="checkbox" id="checkbox-be" name="taste" value="salty">
+										<label for="checkbox-be">鹹味<font color="#FF9900">Salty</font></label>
+										<input type="checkbox" id="checkbox-bet" name="taste" value="bitter">
+										<label for="checkbox-bet">苦味<font color="#FF9900">Bitter</font></label>
+										<input type="checkbox" id="checkbox-betaa" name="taste" value="spicy">
+										<label for="checkbox-betaa">辣味<font color="#FF9900">Spicy</font></label>
+										<input type="checkbox" id="checkbox-betaaa" name="taste" value="sour">
+										<label for="checkbox-betaaa">酸味<font color="#FF9900">Sour</font></label>
+										</tr>
+										<br>
+										<tr class="a3">
+											<br>
+									<label>7. 料理的"風格"喜歡... <font color="#FF9900">Which sort of food style do you prefer?</font></label><br>
+										<input type="radio" id="style1" name="taste1" value="Japanese" checked>
+										<label for="style1">日式<font color="#FF9900">Japanese style</font></label>
+										<input type="radio" id="style2" name="taste1" value="Taiwanese">
+										<label for="style2">台式<font color="#FF9900">Taiwanese style</font></label>
+										<input type="radio" id="style3" name="taste1" value="Chinese">
+										<label for="style3">中式<font color="#FF9900">Chinese style</font></label>
+										<input type="radio" id="style4" name="taste1" value="Korean">
+										<label for="style4">韓式<font color="#FF9900">Korean style</font></label>
+										<input type="radio" id="style5" name="taste1" value="Southeast">
+										<label for="style5">東南亞式<font color="#FF9900">Southeast Asia style</font></label>
+										<input type="radio" id="style6" name="taste1" value="American">
+										<label for="style6">美式<font color="#FF9900">American style</font></label>
+										<input type="radio" id="style7" name="taste1" value="European">
+										<label for="style7">歐式<font color="#FF9900">European style</font></label>
+										<input type="radio" id="style8" name="taste1" value="British">
+										<label for="style8">英式<font color="#FF9900">British style</font></label><br>
+										</tr>
+										<tr class="a3">
+											<br>
+									<label>8. 優先選擇食譜的依據是...(可複選) <font color="#FF9900">What is your first priority for choosing the recipe?</font></label><br>
+										<input type="checkbox" id="choice1" name="taste2" value="Cheap">
+										<label for="choice1">價格便宜<font color="#FF9900">Cheap</font></label>
+										<input type="checkbox" id="choice2" name="taste2" value="Easy">
+										<label for="choice2">簡單快速出好菜<font color="#FF9900">Easy and Efficient</font></label>
+										<input type="checkbox" id="choice3" name="taste2" value="DependOther">
+										<label for="choice3">依據其他人的推薦,評價 <font color="#FF9900">Depend on the other comments ans suggestion</font></label>
+										<input type="checkbox" id="choice4" name="taste2" value="Taste">
+										<label for="choice4">根據自我的口味喜好<font color="#FF9900">Depends on my own taste or interest</font></label>
+										<input type="checkbox" id="choice5" name="taste3" value="Other">
+										<label for="choice5">其他<font color="#FF9900">other...</font></label><input name="OtherPriority" size="40" style="font-size:12px;padding:8px" type="textbox"><br>
+									</table>
+									<label>9. 討厭或過敏的食材<font color="#FF9900">Allergy or dislike_ingredient to any ingredient?:</font></label><br>
+									<textarea maxlength="100" name="dislike_ingredient" placeholder="Ex:蝦子 牛奶 (請幫用空格隔開食材)" style="width:400px;height:120px;"></textarea><br>
+									<p><button type='submit'>確認送出 <font color="#FF9900">Submit</font></button></p>
+								</form>
+					</div>
+				</div>
+			</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>關於"食在，想不到"</h3>
+							<p>"食在，想不到" 採用網頁Web及行動裝置LineBot進行開發，提供使用者自行上傳或搜尋相關料理食材，系統也能根據購買食材清單及冰箱現有食材紀錄推薦食譜，是一套便捷的食譜交流系統。</p>
+						</section>
+						<section>
+							<h4>4 W</h4>
+							<ul class="alt">
+								<li><a href="#">WHO is "食在，想不到"'s target market ? </a></li>
+								<li><a href="#">WHEN can you used it ?</a></li>
+								<li><a href="#">WHAT is "食在，想不到" ?</a></li>
+								<li><a href="#">HOW to use "食在，想不到" ?</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>聯絡我們</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; AI_FOOD <a href="index.html">食在，想不到 (按一下返回)</a>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+<!--			<script src="assets/js/jquery.min.js"></script>-->
+<!--			<script src="assets/js/browser.min.js"></script>-->
+<!--			<script src="assets/js/breakpoints.min.js"></script>-->
+<!--			<script src="assets/js/util.js"></script>-->
+<!--			<script src="assets/js/main.js"></script>-->
+
+	</body>
+</html>

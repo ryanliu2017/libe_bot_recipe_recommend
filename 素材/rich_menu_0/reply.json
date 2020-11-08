@@ -1,0 +1,75 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "圖文選單 1",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 153,
+        "y": 72,
+        "width": 2220,
+        "height": 453
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://www.google.com.tw/"
+      }
+    },
+    {
+      "bounds": {
+        "x": 165,
+        "y": 576,
+        "width": 513,
+        "height": 797
+      },
+      "action": {
+        "type": "postback",
+        "text": "查看冰箱",
+        "data": "menu=查看冰箱"
+      }
+    },
+    {
+      "bounds": {
+        "x": 763,
+        "y": 593,
+        "width": 495,
+        "height": 797
+      },
+      "action": {
+        "type": "postback",
+        "text": "關鍵字搜索",
+        "data": "menu=關鍵字搜索"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1305,
+        "y": 606,
+        "width": 517,
+        "height": 788
+      },
+      "action": {
+        "type": "postback",
+        "text": "今晚我要來點",
+        "data": "menu=今晚我要來點"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1864,
+        "y": 602,
+        "width": 517,
+        "height": 788
+      },
+      "action": {
+        "type": "postback",
+        "text": "準備進貢",
+        "data": "menu=準備進貢"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "postback",
+      "label": "image",
+      "data": "image"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "action": {
+      "type": "uri",
+      "label": "Action",
+      "uri": "https://linecorp.com"
+    },
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "食材訊息:",
+            "weight": "bold",
+            "size": "xl",
+            "action": {
+              "type": "postback",
+              "label": "食材",
+              "data": "ingridients"
+            },
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "ingridients",
+            "action": {
+              "type": "postback",
+              "label": "食材",
+              "data": "ingridients"
+            },
+            "contents": []
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "separator",
+        "margin": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "資訊有誤",
+          "data": "False"
+        },
+        "color": "#905C44",
+        "style": "primary"
+      },
+      {
+        "type": "filler",
+        "flex": 10
+      }
+    ]
+  }
+}

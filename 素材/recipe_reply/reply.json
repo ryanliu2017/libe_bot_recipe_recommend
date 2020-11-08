@@ -1,0 +1,557 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://pic1.xuehuaimg.com/proxy/baijia/https://f12.baidu.com/it/u=222248243,894082600&fm=173&app=25&f=JPEG?w=600&h=436&s=D5B332D51E425A57CA29A0F903005033&access=215967316",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食譜名稱:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "recipe",
+                "size": "xl",
+                "margin": "md",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "多少人說讚:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "like",
+                "weight": "regular",
+                "size": "xl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食材:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "ingredients",
+                "size": "md",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "食譜網址",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "我要這個食譜",
+              "text": "您已成功選入食譜，將幫您從智能冰箱中扣除所需食材",
+              "data": "confirm="
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://cdn.bella.tw/files/Bella-Bodhi-Nike-07(1).jpg",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食譜名稱:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "recipe",
+                "size": "xl",
+                "margin": "md",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "多少人說讚:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "like",
+                "weight": "regular",
+                "size": "xl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食材:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "ingredients",
+                "size": "md",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "食譜網址",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "我要這個食譜",
+              "text": "您已成功選入食譜，將幫您從智能冰箱中扣除所需食材",
+              "data": "confirm="
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://img.alicdn.com/imgextra/i1/2649215023/O1CN0182Hegs1myZvx3ZEq8_!!2649215023-0-daren.jpg_2200x2200Q50s50.jpg",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食譜名稱:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "recipe",
+                "size": "xl",
+                "margin": "md",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "多少人說讚:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "like",
+                "weight": "regular",
+                "size": "xl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食材:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "ingredients",
+                "size": "md",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "食譜網址",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "我要這個食譜",
+              "text": "您已成功選入食譜，將幫您從智能冰箱中扣除所需食材",
+              "data": "confirm="
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://s.zimedia.com.tw/s/V5BTq4-1",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食譜名稱:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "recipe",
+                "size": "xl",
+                "margin": "md",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "多少人說讚:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "like",
+                "weight": "regular",
+                "size": "xl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食材:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "ingredients",
+                "size": "md",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "食譜網址",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "我要這個食譜",
+              "text": "您已成功選入食譜，將幫您從智能冰箱中扣除所需食材",
+              "data": "confirm="
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://assets.juksy.com/files/articles/77737/800x_100_w-5ad6c9e180024.jpg",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食譜名稱:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "recipe",
+                "size": "xl",
+                "margin": "md",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "多少人說讚:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "like",
+                "weight": "regular",
+                "size": "xl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "食材:",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "ingredients",
+                "size": "md",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "食譜網址",
+              "uri": "https://linecorp.com"
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "我要這個食譜",
+              "text": "您已成功選入食譜，將幫您從智能冰箱中扣除所需食材",
+              "data": "confirm="
+            },
+            "color": "#39D230FF",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "direction": "ltr",
+      "hero": {
+        "type": "image",
+        "url": "https://memeprod.sgp1.digitaloceanspaces.com/user-resource/bbd00e5bfea8098b9307e8c52c61b553.png",
+        "size": "full",
+        "aspectRatio": "1.51:1",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "什麼?!",
+            "weight": "bold",
+            "size": "lg",
+            "align": "center",
+            "margin": "lg",
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "這些都不喜歡嗎?",
+            "weight": "bold",
+            "size": "lg",
+            "align": "center",
+            "margin": "lg",
+            "contents": []
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "這些我都不要",
+              "text": "請從下方選單重新開始使用本系統",
+              "data": "cancel=1"
+            },
+            "color": "#40FEDDC6",
+            "style": "secondary"
+          }
+        ]
+      }
+    }
+  ]
+}

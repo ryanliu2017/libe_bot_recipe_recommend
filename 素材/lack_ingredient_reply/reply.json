@@ -1,0 +1,19 @@
+{
+  "type": "box",
+  "layout": "vertical",
+  "contents": [
+    {
+      "type": "text",
+      "text": "***提醒***",
+      "weight": "bold",
+      "size": "xl",
+      "color": "#F01919FF"
+    },
+    {
+      "type": "text",
+      "text": "您現有食材缺少: ",
+      "size": "md",
+      "wrap": true
+    }
+  ]
+}

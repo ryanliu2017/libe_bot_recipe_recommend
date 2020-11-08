@@ -1,0 +1,16 @@
+ngrok
+ngrok.exe
+config.ini
+line_secret_key.json
+ip_info.json
+user_insert.py
+mysql_test.ipynb
+mysql_vs_redis.ipynb
+/image_detection/dataset/
+/image_detection/inv3_single_furniture_binary_1.h5
+/image_detection/inception.h5
+/.ipynb_checkpoints/
+/recipe_system/.ipynb_checkpoints/
+/recipe_system/dataset/
+/recipe_system/doc_vec.csv
+/recipe_system/doc_vec.zip

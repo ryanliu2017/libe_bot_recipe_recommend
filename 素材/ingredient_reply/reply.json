@@ -1,0 +1,27 @@
+{
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "columns": [
+      {
+        "title": "食材1號",
+        "text": "數量，存放日期",
+        "actions": [
+          {
+            "type": "postback",
+            "label": "我想加入相關食材",
+            "text": "你選擇了",
+            "data": "refri=1,"
+          },
+          {
+            "type": "postback",
+            "label": "移除這個食材選擇",
+            "text": "你從選單中移除了",
+            "data": "refri=0,"
+          }
+        ]
+      }
+    ]
+  }
+}
