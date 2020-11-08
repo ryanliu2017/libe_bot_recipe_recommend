@@ -3,10 +3,13 @@ import redis
 import json
 import time
 
-client = InsecureClient("http://192.168.1.176:50070", user='spark')
-r = redis.StrictRedis(host='192.168.1.176', port=6379, decode_responses=True)
+ip_info = json.load(open("./ip_info.json", 'r', encoding='utf8'))
+
+client = InsecureClient("http://{}:50070".format(ip_info.get("HDFS")), user='spark')
+r = redis.StrictRedis(host=ip_info.get("Redis"), port=6379, decode_responses=True)
 
 def main():
+    # load recipe json from hdfs
     with client.read("/recipe/recipe1023_V9.json")as reader:
         data = json.load(reader)
 
