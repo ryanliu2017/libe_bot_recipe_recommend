@@ -231,7 +231,7 @@ def process_follow_event(event):
         line_bot_api.push_message(
             event.source.user_id,
             [TextSendMessage(text='由於您是新使用者\n建議先從下方連結問卷\n填寫您的口味偏好及帳號註冊\n以利為您服務!'),
-             TextSendMessage(text=f'問卷連結: https://aa07396bb36b.ap.ngrok.io/survey?user_ID={event.source.user_id}')]
+             TextSendMessage(text=f'問卷連結: https://2a061328ab21.ap.ngrok.io/survey?user_ID={event.source.user_id}')]
         )
 
 
@@ -306,7 +306,7 @@ def process_postback_event(event):
                 TextSendMessage(text="為您連線中請稍後...")
             )
             try:
-                ssh_client.connect(hostname='192.168.1.131', port=22, username='pi', password='123')
+                ssh_client.connect(hostname=ip_info.get("ResberryPi"), port=22, username='pi', password='123')
                 line_bot_api.push_message(
                     user_id,
                     TextSendMessage(text="已建立連線請開始操作...")
@@ -384,6 +384,9 @@ def process_postback_event(event):
         if db.get_user_refrigerator(user_id):
             ReplyMessager.user_select_delete(user_id)
             db.menu_select(user_id, recipe_id)
+            lack = db.lack[user_id]
+            if lack:
+                line_bot_api.push_message(user_id, TextSendMessage(text=f"提醒您\n記得購買 {','.join(lack)} 喔"))
         else:
             line_bot_api.reply_message(
                 event.reply_token,

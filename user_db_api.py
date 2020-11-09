@@ -34,6 +34,7 @@ class DataBaseConnector(object):
         self.cursor = self.mysql.cursor()
         self.refrigerator = {}
         self.menu_list = {}
+        self.lack = {}
 
     def __str__(self):
         return "It's a db connector for Redis and MySQL to make any changes made from line bot."
@@ -174,6 +175,7 @@ class DataBaseConnector(object):
 
     def menu_select(self, user_id, recipe_id):
         # 使用者點選菜單確認後，觸發此method，將使用者現有食材更新取用紀錄、新增缺少食材紀錄
+        self.lack[user_id] = {}
 
         if not self.menu_list.get(user_id, 0):
             self.menu_list[user_id] = []
@@ -189,7 +191,7 @@ class DataBaseConnector(object):
         intersection = ingredient_set & user_set
         #使用者缺漏食材
         lack = ingredient_set - user_set
-
+        self.lack[user_id] = lack
         # 刪除使用者在redis裡面的資訊
         # self.redis.hdel(user_id, *intersection) -> 下面直接重更新資料
         # MySQL update 食材取用日期
@@ -199,7 +201,8 @@ class DataBaseConnector(object):
         today = str(date.today())
         db_id = self.get_db_userid(user_id)  # 從line_id中找user_id
         food_id = self.redis.hmget('general_ingredient', *intersection)
-        lack_food_id = self.redis.hmget('general_ingredient', *lack)
+        if lack:
+            lack_food_id = self.redis.hmget('general_ingredient', *lack)
 
         # 每一食材id: mysql 更新
         for each_ing_id in food_id:
@@ -216,7 +219,7 @@ class DataBaseConnector(object):
         """.format(db_id, recipe_id, today)
         self.cursor.execute(sql_my_recipe_record)
         self.mysql.commit()
-
+        '''
         # 缺漏食材紀錄新增
         for each_lack in lack_food_id:
             sql_lack = """
@@ -225,7 +228,7 @@ class DataBaseConnector(object):
             """.format(db_id, each_lack, recipe_id, today)
             self.cursor.execute(sql_lack)
             self.mysql.commit()
-
+        '''
         self.refresh_refrigerator_redis_single(user_id, db_id)
 
         self.close_connect_to_mysql()
