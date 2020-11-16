@@ -33,8 +33,8 @@ class DataBaseConnector(object):
         self.mysql = self.connect_to_mysql('recipe')
         self.cursor = self.mysql.cursor()
         self.refrigerator = {}
-        self.menu_list = {}
         self.lack = {}
+        self.intersection = {}
 
     def __str__(self):
         return "It's a db connector for Redis and MySQL to make any changes made from line bot."
@@ -176,11 +176,8 @@ class DataBaseConnector(object):
     def menu_select(self, user_id, recipe_id):
         # 使用者點選菜單確認後，觸發此method，將使用者現有食材更新取用紀錄、新增缺少食材紀錄
         self.lack[user_id] = {}
+        self.intersection[user_id] = {}
 
-        if not self.menu_list.get(user_id, 0):
-            self.menu_list[user_id] = []
-        # 讓用戶檢視當下選擇的食譜id
-        self.menu_list[user_id].append(recipe_id)
         """移除食材"""
         # 取得食譜使用的食材
         ingredient_list = self.redis.hget(recipe_id, "ingredient").split(",")
@@ -189,11 +186,12 @@ class DataBaseConnector(object):
         user_set = set(self.redis.hkeys(user_id))
         # 取得兩者共有的食材
         intersection = ingredient_set & user_set
-        #使用者缺漏食材
-        lack = ingredient_set - user_set
-        self.lack[user_id] = lack
-        # 刪除使用者在redis裡面的資訊
-        # self.redis.hdel(user_id, *intersection) -> 下面直接重更新資料
+        self.intersection[user_id] = intersection
+
+        # 如果發現使用者完全沒有任何相關食材就return False 不讓使用者點選該食譜
+        if not self.intersection[user_id]:
+            return False
+
         # MySQL update 食材取用日期
         # 重新建立連線
         self.mysql = self.connect_to_mysql('recipe')
@@ -201,8 +199,6 @@ class DataBaseConnector(object):
         today = str(date.today())
         db_id = self.get_db_userid(user_id)  # 從line_id中找user_id
         food_id = self.redis.hmget('general_ingredient', *intersection)
-        if lack:
-            lack_food_id = self.redis.hmget('general_ingredient', *lack)
 
         # 每一食材id: mysql 更新
         for each_ing_id in food_id:
@@ -219,19 +215,27 @@ class DataBaseConnector(object):
         """.format(db_id, recipe_id, today)
         self.cursor.execute(sql_my_recipe_record)
         self.mysql.commit()
-        '''
+
+        #使用者缺漏食材
+        lack = ingredient_set - user_set
+        self.lack[user_id] = lack
+
         # 缺漏食材紀錄新增
-        for each_lack in lack_food_id:
-            sql_lack = """
-            INSERT INTO ingredient_lack_record (使用者ID, 食材ID, 食譜ID, 食譜使用日期) 
-            VALUES ('{}', '{}', '{}', '{}');
-            """.format(db_id, each_lack, recipe_id, today)
-            self.cursor.execute(sql_lack)
-            self.mysql.commit()
-        '''
+        if self.lack[user_id]:
+            lack_food_id = self.redis.hmget('general_ingredient', *lack)
+            for each_lack in lack_food_id:
+                sql_lack = """
+                INSERT INTO ingredient_lack_record (使用者ID, 食材ID, 食譜ID, 食譜使用日期) 
+                VALUES ('{}', '{}', '{}', '{}');
+                """.format(db_id, each_lack, recipe_id, today)
+                self.cursor.execute(sql_lack)
+                self.mysql.commit()
+
         self.refresh_refrigerator_redis_single(user_id, db_id)
 
         self.close_connect_to_mysql()
+
+        return True
 
     def cluster_content_get(self, cluster_number):
         # 食譜K-means分群結果取出

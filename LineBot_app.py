@@ -217,7 +217,7 @@ def callback():
 @handler.add(FollowEvent)
 def process_follow_event(event):
     # 使用者綁定設定的richmenu
-    line_bot_api.link_rich_menu_to_user(event.source.user_id, "richmenu-c19737c2877e07d16e98ceb9e2af077f")
+    line_bot_api.link_rich_menu_to_user(event.source.user_id, "richmenu-fd6de3bb66dee5b0553d33005f3ccf4a")
     user_profile = line_bot_api.get_profile(event.source.user_id)
     print(user_profile)
     line_bot_api.reply_message(
@@ -383,15 +383,22 @@ def process_postback_event(event):
         recipe_id = action[0]
         if db.get_user_refrigerator(user_id):
             ReplyMessager.user_select_delete(user_id)
-            db.menu_select(user_id, recipe_id)
-            lack = db.lack[user_id]
-            if lack:
-                line_bot_api.push_message(user_id, TextSendMessage(text=f"提醒您\n記得購買 {','.join(lack)} 喔"))
+            if db.menu_select(user_id, recipe_id):
+                if db.lack[user_id]:
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"提醒您\n記得購買 {','.join(db.lack[user_id])} 喔"))
+
+            else:
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text="很抱歉，由於您的冰箱食材欠缺過多\n無法採用該食譜\n請先新增您冰箱的食材資訊\n以利為您提供更多服務")
+                )
+
         else:
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text="很抱歉，請先新增您冰箱的食材資訊\n以利為您提供更多服務")
             )
+
         '''連線資料庫扣除使用食材'''
     elif pb_function == "cancel":
         ReplyMessager.user_select_delete(user_id)

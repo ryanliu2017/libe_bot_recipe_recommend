@@ -24,7 +24,7 @@ from linebot.models.template import *
 import pprint
 import copy
 from recipe_system.apriori_simplification_revised import *
-
+from random import sample
 
 '''
 建立回復訊息專用物件
@@ -174,6 +174,17 @@ class ReplyMessager(object):
         refri_show_tmp = ingredient_tmp["template"]["columns"]
         # 取得使用者冰箱食材總數
         carouse_number = len(user_refri_dict)
+
+        # 因line template限制無法一次傳超過10個選單，因此若食材庫超過10個的話就隨機選10個呈現
+        if carouse_number > 10:
+            print("user refrigerator more than 10 items.")
+            user_refri_key = sample(user_refri_dict.keys(), 10)
+            new_dict = {}
+            for key in user_refri_key:
+                new_dict[key] = user_refri_dict[key]
+            user_refri_dict = new_dict
+            carouse_number = len(user_refri_dict)
+
 
         for key, value in user_refri_dict.items():
             # 依據食材總數調整reply.json的column數量
